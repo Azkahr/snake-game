@@ -1,4 +1,5 @@
 const canvas = document.getElementById('game')
+const wrapper = document.getElementById('wrapper')
 const ctx = canvas.getContext('2d')
 
 class SnakePart {
@@ -87,7 +88,7 @@ function clearScreen() {
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     // ctx.fillStyle = 'black'
     // ctx.fillRect(0, 0, canvas.width, canvas.height)
-}
+}   
 
 function drawSnake() {
     ctx.fillStyle = 'green'
@@ -156,5 +157,31 @@ function keyDown(e) {
             xVelocity = 1
     }
 }
+
+function show() {
+	document.getElementById("wrapper").style.display = 'block'
+	document.getElementById("intro").style.display = 'none'
+}
+
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        show();
+    }
+}
+
+function play() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+}
+
+function refresh() {
+    location.reload()
+}
+
+// function testIlang() {
+//     wrapper.style.display = 'none'
+// }
 
 drawGame()

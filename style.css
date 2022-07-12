@@ -6,6 +6,29 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 canvas{
     box-shadow: black 20px 10px 50px;
+}
+
+#intro {
+    margin-top: 50px;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #0069d9;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #5d96d4;
+    transform: scale(1.1);
+}
+
+#wrapper {
+    display: none;
 }
